@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+	Home
+{% endblock %}
+
+{% block content %} 
+	<br> <br>
+{% if user.is_authenticated %}
+	<div class="card text-center col-md-6 offset-md-3">
+		<div class="card-header">
+			Details
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">User Name: {{user.username}} </h5>
+			<p class="card-text">First Name: {{user.first_name}} </p>
+			<p class="card-text">Last Name: {{user.last_name}} </p>
+			<p class="card-text">Email: {{user.email}} </p>
+		</div>
+		<div class="card-footer text-muted">
+			More Info
+		</div>
+	</div>
+{% endif %}
+{% endblock %}
